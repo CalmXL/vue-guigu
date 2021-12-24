@@ -31,7 +31,7 @@ module.exports = {
     proxy: {
       '/4000': { // 匹配所有以 '/api'开头的请求路径
         target: 'http://localhost:4000', // 代理目标的基础路径
-        changeOrigin: true, // 支持跨域
+        changeOrigin: true, // 支持跨域,如果协议与主机也不相同,必须加上
         pathRewrite: { // 重写路径: 去掉路径中开头的'/api'
           '^/4000': ''
         }
@@ -50,13 +50,13 @@ module.exports = {
         'pages': resolve('src/pages'),
       }
     },
-    module: {
-      rules: [
-        {
-          test: /\.styl$/,
-          loader: "stylus-loader", // 将 Stylus 文件编译为 CSS
-        },
-      ],
-    },
+    // module: {
+    //   rules: [
+    //     {
+    //       test: /\.styl$/,
+    //       loader: "stylus-loader", // 将 Stylus 文件编译为 CSS
+    //     },
+    //   ],
+    // },
   },
 }
