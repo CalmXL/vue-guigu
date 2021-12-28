@@ -7,7 +7,7 @@
 
 <script type="text/ecmascript-6">
 import FooterGuide from "./components/FooterGuide/FooterGuide.vue";
-import { reqAddress } from '@/api'
+
   export default {  
     components: { FooterGuide },
     mounted() {
